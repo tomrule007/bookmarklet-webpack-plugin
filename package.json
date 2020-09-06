@@ -1,0 +1,24 @@
+{
+  "name": "bookmarklet-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Webpack plugin to convert a javascript bundle into a html page with a link to bookmarklet-ified version of the javascript bundle.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomrule007/bookmarklet-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "bookmarklet"
+  ],
+  "author": "Thomas J. Herzog",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomrule007/bookmarklet-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/tomrule007/bookmarklet-webpack-plugin#readme"
+}
