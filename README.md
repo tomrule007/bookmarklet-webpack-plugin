@@ -105,3 +105,10 @@ Output:
 - [ ] Add template engine support (allow for fully customizable html output)
 
 If you would like to get involved in an open source project I encourage you to checkout the [Contributing guidelines](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/.github/CONTRIBUTING.md) and open a discussion on the issues board. There is plenty to do and I would love your help. :)
+
+## Inspirations / Credits
+
+I wanted to simplify the build process of my bookmarklet: [paintballnet-hotkeys](https://github.com/tomrule007/paintballnet-hotkeys). I started with `mrcoles/bookmarklet` which is a great package with a lot of features but it didn't integrate too well with my webpack config. Webpack minification process would strip the meta comments that killed most of the packages features. I then investigated a webpack solution to reduce the build steps and found `ivanzk/bookmarklet-wrapper-webpack-plugin`. This package was a great but didn't output the html template page that I desired.
+
+- [mrcoles/bookmarklet](https://github.com/mrcoles/bookmarklet) - The current source for the included html template.
+- [ivanzk/bookmarklet-wrapper-webpack-plugin](https://github.com/ivanzk/bookmarklet-wrapper-webpack-plugin/blob/master/index.js) - The starter logic for integrating into webpack's plugin system.
