@@ -7,7 +7,7 @@
     "test": "jest",
     "coverage": "jest --coverage --collectCoverageFrom='bookmarklet-webpack-plugin.js'",
     "coverageReport": "jest --coverage --coverageDirectory='coverage' --collectCoverageFrom='bookmarklet-webpack-plugin.js'",
-    "lint": "eslint src/*.js"
+    "lint": "eslint bookmarklet-webpack-plugin.js"
   },
   "husky": {
     "hooks": {
