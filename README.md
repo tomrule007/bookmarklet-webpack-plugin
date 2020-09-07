@@ -57,6 +57,8 @@ module.exports = {
 
 Output:
 
+[Demo Link](https://tomrule007.github.io/bookmarklet-webpack-plugin/example/dist/index.html) - open console log to see `hello world` when clicking the bookmarklet link.
+
 ```html
 <!-- index.html -->
 <!DOCTYPE html>
