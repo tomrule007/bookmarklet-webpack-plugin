@@ -4,7 +4,7 @@ Convert a javascript bundle into a html page with a link to bookmarklet-ified ve
 
 ## How it works
 
-Take the final output of your webpack config, with all your desired transformations/bundling/minification/ect. included. This plugin applies a final transformation of wrapping the function in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), applying [URI encoding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) and appending `javascript:` to make it executable via a browser link.
+Take the final output of your webpack config, with all your desired transformations/bundling/minification/ect. included. This plugin applies a final transformation of wrapping the function in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), applying [URI encoding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) and perpend `javascript:` to make it executable via a browser link.
 
 That code is then wrapped in styled html document to display the bookmarklet link and project information and instructions for users to use the bookmarklet. The page is customizable via multiple optional plugin parameter properties. (future versions will include a template engine support for full customization).
 
