@@ -2,9 +2,23 @@
   "name": "bookmarklet-webpack-plugin",
   "version": "1.0.0",
   "description": "Webpack plugin to convert a javascript bundle into a html page with a link to bookmarklet-ified version of the javascript bundle.",
-  "main": "index.js",
+  "main": "bookmarklet-webpack-plugin.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage --collectCoverageFrom='bookmarklet-webpack-plugin.js'",
+    "coverageReport": "jest --coverage --coverageDirectory='coverage' --collectCoverageFrom='bookmarklet-webpack-plugin.js'",
+    "lint": "eslint src/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,5 +34,27 @@
   "bugs": {
     "url": "https://github.com/tomrule007/bookmarklet-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/tomrule007/bookmarklet-webpack-plugin#readme"
+  "homepage": "https://github.com/tomrule007/bookmarklet-webpack-plugin#readme",
+  "peerDependencies": {
+    "webpack": "^4.44.1"
+  },
+  "dependencies": {
+    "webpack-sources": "^1.4.3",
+    "schema-utils": "^2.7.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.22.6",
+    "@testing-library/jest-dom": "^5.11.4",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "prettier": "2.1.1"
+  }
 }
