@@ -47,7 +47,7 @@ module.exports = {
       input: 'main.js',             // required (must match webpack output)
       output: 'index.html',          // <- default
       linkName:'Bookmarklet',        // <- default
-      pageTitle: 'Cool Bookmarklet', // <- default
+      pageTitle: 'Cool Bookmarklet', // default -> 'Bookmarklet'
       repo:'http://example.com',     // default -> '' (removed line)
       author:'Example Author',       // default -> '' (removed line)
     }),

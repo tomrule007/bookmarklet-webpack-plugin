@@ -22,7 +22,14 @@ module.exports = class BookmarkletWebpackPlugin {
   }
 
   apply(compiler) {
-    const { input, output, repo, linkName, pageTitle, author } = this.options;
+    const {
+      input,
+      output = 'index.html',
+      repo,
+      linkName = 'Bookmarklet',
+      pageTitle = 'Bookmarklet',
+      author,
+    } = this.options;
 
     compiler.hooks.emit.tapAsync(
       'BookmarkletWebpackPlugin',
