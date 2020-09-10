@@ -1,4 +1,4 @@
-# Bookmarklet Webpack Plugin [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/.github/CONTRIBUTING.md)
+# Bookmarklet Webpack Plugin [![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/.github/CONTRIBUTING.md) [![Join the chat at https://gitter.im/bookmarklet-webpack-plugin/community](https://badges.gitter.im/bookmarklet-webpack-plugin/community.svg)](https://gitter.im/bookmarklet-webpack-plugin/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Convert a javascript bundle into a html page with a link to bookmarklet-ified version of the javascript bundle.
 
