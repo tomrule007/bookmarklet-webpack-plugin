@@ -1,5 +1,7 @@
+const fs = require('fs');
 const validateOptions = require('schema-utils');
 const { RawSource } = require('webpack-sources');
+const Handlebars = require('handlebars');
 
 // TODO: Setup schema file
 // > include default values
@@ -29,6 +31,7 @@ module.exports = class BookmarkletWebpackPlugin {
       linkName = 'Bookmarklet',
       pageTitle = 'Bookmarklet',
       author,
+      templatePath = require.resolve('./default.html.hbs'),
     } = this.options;
 
     compiler.hooks.emit.tapAsync(
@@ -60,7 +63,7 @@ module.exports = class BookmarkletWebpackPlugin {
               
             input: ${input} 
             
-            Matched multiple assets: ${asset.map(([key, _]) => key).join(', ')})
+            Matched multiple assets: ${asset.map(([key, _]) => key).join(', ')}
 
             *Must rename assets or use a better match bundle name.
             `
@@ -72,60 +75,32 @@ module.exports = class BookmarkletWebpackPlugin {
         // Remove the javascript asset output
         delete compilation.assets[assetName];
 
-        compilation.assets[output] = new RawSource(
-          createHtmlTemplate({
-            bookmarkletCode,
-            repo,
-            linkName,
-            pageTitle,
-            author,
-          })
-        );
+        try {
+          const templateSource = fs.readFileSync(templatePath, 'utf8');
+          const generateOutput = Handlebars.compile(templateSource);
+          compilation.assets[output] = new RawSource(
+            generateOutput({
+              bookmarkletCode,
+              repo,
+              linkName,
+              pageTitle,
+              author,
+            })
+          );
+        } catch (error) {
+          throw Error(
+            `
+            BookmarkletWebpackPlugin: 
+              
+            input: ${input} 
+            
+            Failed to generate output from template: ${error.message}
+            `
+          );
+        }
 
         cb();
       }
     );
   }
 };
-
-function createHtmlTemplate({
-  bookmarkletCode,
-  linkName,
-  pageTitle,
-  repo,
-  author,
-}) {
-  const html = `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      html,body,div {  text-align: center; margin: 0 auto; padding: 0; font: normal 16px/24px Helvetica Neue, Helvetica, sans-serif; color: #333; }
-      #main { max-width: 630px; margin: 3em auto; }
-      .bookmarklet { display: inline-block; padding: .5em 1em; color: #fff; background: #50dcf3; border-radius: 4px; text-decoration: none; }
-      a { color: #50dcf3; }
-      .dim { color: #999; }
-      .bookmarkContainer { padding: 30px;}
-    </style>
-  </head>
-  <body>
-    <div id="main">
-      <h1>${pageTitle}</h1>
-      ${author ? `<p>By: ${author}</p>` : ''}
-     <div class="bookmarkContainer">
-        <p>
-          <a class="bookmarklet" href="${bookmarkletCode}">${linkName}</a>
-        </p> 
-        <p>
-          Drag this button to your bookmarks bar to save it as a bookmarklet.
-        </p>
-      </div>
-      ${repo ? `<p>See source at <br> <a href="${repo}">${repo}</a></p>` : ''}
-    </div>
-  </body>
-</html>
-`;
-
-  return html;
-}

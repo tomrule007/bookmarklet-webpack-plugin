@@ -42,8 +42,9 @@
     "webpack": "^4.44.1"
   },
   "dependencies": {
-    "webpack-sources": "^1.4.3",
-    "schema-utils": "^2.7.1"
+    "handlebars": "^4.7.7",
+    "schema-utils": "^2.7.1",
+    "webpack-sources": "^1.4.3"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.22.6",
@@ -56,7 +57,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.5",
+    "husky": "^4.3.8",
     "jest": "^26.4.2",
     "prettier": "2.1.1"
   }

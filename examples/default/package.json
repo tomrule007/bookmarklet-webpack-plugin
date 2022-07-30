@@ -1,0 +1,16 @@
+{
+  "name": "examples-default",
+  "version": "0.0.1",
+  "description": "Default HTML output",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack build"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "bookmarklet-webpack-plugin": "../../",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^4.10.0"
+  }
+}
