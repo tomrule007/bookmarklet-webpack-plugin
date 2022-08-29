@@ -1,0 +1,16 @@
+{
+  "name": "examples-custom-html",
+  "version": "0.0.1",
+  "description": "Custom HTML output",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack build"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "bookmarklet-webpack-plugin": "../../",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^4.10.0"
+  }
+}

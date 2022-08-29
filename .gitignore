@@ -1,3 +1,6 @@
 node_modules/
 __tests__/
 coverage/
+
+# Lockfiles from examples
+examples/**/package-lock.json

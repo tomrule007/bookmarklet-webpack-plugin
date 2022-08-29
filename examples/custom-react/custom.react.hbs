@@ -1,0 +1,33 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const BookmarkletContainer = styled.div`
+  text-align: center;
+`;
+
+const BookmarkletLink = styled.a`
+  display: inline-block;
+  padding: .5em 1em;
+  color: #fff;
+  background: #50dcf3;
+  border-radius: 4px;
+  text-decoration: none;
+`;
+
+const Bookmarklet = () => {
+  return (
+    <BookmarkletContainer>
+      <p>
+        <bold>{{pageTitle}}</bold>{{#if author}} by {{author}}{{/if}}.
+      </p>
+      <p>
+        <BookmarkletLink href="{{bookmarkletCode}}">{{linkName}}</BookmarkletLink>
+      </p> 
+      <p>
+        Drag this button to your bookmarks bar to save it as a bookmarklet.<br/>
+      </p>
+    </BookmarkletContainer>
+  )
+};
+
+export default Bookmarklet;
