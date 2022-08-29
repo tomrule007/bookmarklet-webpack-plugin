@@ -6,7 +6,7 @@ Convert a javascript bundle into a html page with a link to bookmarklet-ified ve
 
 Take the final output of your webpack config, with all your desired transformations/bundling/minification/ect. included. This plugin applies a final transformation of wrapping the function in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), applying [URI encoding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) and perpend `javascript:` to make it executable via a browser link.
 
-That code is then wrapped in styled html document to display the bookmarklet link and project information and instructions for users to use the bookmarklet. The page is customizable via multiple optional plugin parameter properties. (future versions will include a template engine support for full customization).
+That code is then wrapped in styled html document to display the bookmarklet link and project information and instructions for users to use the bookmarklet. The page is customizable via multiple optional plugin parameter properties. Versions 1.1.0 and greater also support custom [handlebars](https://handlebarsjs.com/) templates allowing complete customization of the generated html output, you can even generate react compatible code! See [examples](./examples/) for more details.
 
 \*Currently only supports webpack production mode builds.
 
@@ -57,7 +57,7 @@ module.exports = {
 
 Output:
 
-[Demo Link](https://tomrule007.github.io/bookmarklet-webpack-plugin/example/dist/index.html) - open console log to see `hello world` when clicking the bookmarklet link.
+[Demo Link](https://tomrule007.github.io/bookmarklet-webpack-plugin/example/default/dist/index.html) - open console log to see `hello world` when clicking the bookmarklet link.
 
 ```html
 <!-- index.html -->
@@ -104,7 +104,7 @@ Output:
   - [ ] End to end test with multiple example setups
 - [ ] Add error handling for edge cases with Webpack's builtin error handling api
 - [ ] setup schema-util for options parameter object
-- [ ] Add template engine support (allow for fully customizable html output)
+- [x] Add template engine support (allow for fully customizable html output) - Thank you [@drjonnicholson](https://github.com/drjonnicholson)
 
 If you would like to get involved in an open source project I encourage you to checkout the [Contributing guidelines](https://github.com/tomrule007/bookmarklet-webpack-plugin/blob/master/.github/CONTRIBUTING.md) and open a discussion on the issues board. There is plenty to do and I would love your help. :)
 
